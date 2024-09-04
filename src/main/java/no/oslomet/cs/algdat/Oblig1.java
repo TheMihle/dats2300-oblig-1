@@ -1,5 +1,8 @@
 package no.oslomet.cs.algdat;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Oblig1 {
 
     private Oblig1() {}
@@ -24,7 +27,15 @@ public class Oblig1 {
     public static void delsortering(int[] a) {throw new UnsupportedOperationException();}
 
     // Oppgave 5
-    public static void rotasjon(char[] a) {throw new UnsupportedOperationException();}
+    public static void rotasjon(char[] a) {
+        char last = a[a.length-1];
+        for (int i = a.length-1; i > 0; i--) {
+            a[i] = a[i-1];
+        }
+        a[0] = last;
+    }
+
+
 
     // Oppgave 6
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
