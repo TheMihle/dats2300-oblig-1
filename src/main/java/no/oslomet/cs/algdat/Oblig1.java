@@ -62,21 +62,17 @@ public class Oblig1 {
         int indexS = 0;
         int indexT = 0;
         int indexOutput = 0;
+
         char[] sArray = s.toCharArray();
         char[] tArray = t.toCharArray();
-
         char[] output = new char[sArray.length + tArray.length];
 
         while (indexS < sArray.length || indexT < tArray.length) {
             if (indexS < sArray.length) {
-                output[indexOutput] = sArray[indexS];
-                indexS++;
-                indexOutput++;
+                output[indexOutput++] = sArray[indexS++];
             }
             if (indexT < tArray.length) {
                 output[indexOutput++] = tArray[indexT++];
-//                indexT++;
-//                indexOutput++;
             }
         }
         return String.copyValueOf(output);
