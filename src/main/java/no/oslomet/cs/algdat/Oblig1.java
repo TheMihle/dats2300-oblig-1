@@ -36,6 +36,7 @@ public class Oblig1 {
     }
 
     // Oppgave 5
+    // Moves all characters of array to the right, and puts the rightmost element first. "Rotating" the array by one.
     public static void rotasjon(char[] a) {
         if (a.length > 0) {
             char last = a[a.length-1];
@@ -58,6 +59,7 @@ public class Oblig1 {
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
 
     // Oppgave 7
+    // Intertwines two strings in to one.
     public static String flett(String s, String t) {
         int indexS = 0;
         int indexT = 0;
