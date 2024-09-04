@@ -1,7 +1,6 @@
 package no.oslomet.cs.algdat;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Oblig1 {
 
@@ -33,12 +32,11 @@ public class Oblig1 {
 
     // Oppgave 4
     public static void delsortering(int[] a) {
-
+        throw new UnsupportedOperationException();
     }
 
     // Oppgave 5
     public static void rotasjon(char[] a) {
-
         if (a.length > 0) {
             char last = a[a.length-1];
             for (int i = a.length-1; i > 0; i--) {
@@ -61,7 +59,27 @@ public class Oblig1 {
 
     // Oppgave 7
     public static String flett(String s, String t) {
-        throw new UnsupportedOperationException();
+        int indexS = 0;
+        int indexT = 0;
+        int indexOutput = 0;
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+
+        char[] output = new char[sArray.length + tArray.length];
+
+        while (indexS < sArray.length || indexT < tArray.length) {
+            if (indexS < sArray.length) {
+                output[indexOutput] = sArray[indexS];
+                indexS++;
+                indexOutput++;
+            }
+            if (indexT < tArray.length) {
+                output[indexOutput++] = tArray[indexT++];
+//                indexT++;
+//                indexOutput++;
+            }
+        }
+        return String.copyValueOf(output);
     }
 
     public static String flett(String... s) {
