@@ -35,6 +35,12 @@ public class Oblig1 {
         a[0] = last;
     }
 
+     public static <T> void switchPlces(T[] array, int a, int b) {
+         T temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
+
 
 
     // Oppgave 6
