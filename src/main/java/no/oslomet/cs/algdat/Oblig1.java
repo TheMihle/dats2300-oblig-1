@@ -81,7 +81,21 @@ public class Oblig1 {
     }
 
     public static String flett(String... s) {
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
+        int i = 0;
+        boolean letterAdded = true;
+        StringBuilder output = new StringBuilder();
+        while (letterAdded == true) {
+            letterAdded = false;
+            for (int j = 0; j < s.length; j++) {
+                if (i < s.length) {
+                    output.append(s[j].charAt(i));
+                    letterAdded = true;
+                }
+            }
+            i++;
+        }
+        return output.toString();
     }
 
     // Oppgave 8
