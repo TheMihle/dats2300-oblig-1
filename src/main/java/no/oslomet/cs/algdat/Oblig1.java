@@ -60,6 +60,7 @@ public class Oblig1 {
 
     // Oppgave 7
     // Intertwines two strings in to one.
+    // Don't really need this one any more after the one that takes variable arguments also can take just two arguments.
     public static String flett(String s, String t) {
         int indexS = 0;
         int indexT = 0;
@@ -80,16 +81,17 @@ public class Oblig1 {
         return String.copyValueOf(output);
     }
 
+    // Intertwines any number of strings in to one.
     public static String flett(String... s) {
-//        throw new UnsupportedOperationException();
         int i = 0;
         boolean letterAdded = true;
         StringBuilder output = new StringBuilder();
-        while (letterAdded == true) {
+
+        while (letterAdded) {
             letterAdded = false;
-            for (int j = 0; j < s.length; j++) {
-                if (i < s.length) {
-                    output.append(s[j].charAt(i));
+            for (String string : s) {
+                if (i < string.length()) {
+                    output.append(string.charAt(i));
                     letterAdded = true;
                 }
             }
