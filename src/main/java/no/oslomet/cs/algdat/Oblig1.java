@@ -70,17 +70,14 @@ public class Oblig1 {
         if (a.length < 1) return a.length;
 
         int differentNum = a.length;
-        boolean alreadycCounted = false;
 
         for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
-                if (j < i && a[i] == a[j]) alreadycCounted = true;
-                else if (j > i && a[i] == a[j] && !alreadycCounted) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] == a[j]) {
                     differentNum--;
                     break;          // Little bit faster, not much in the grand scheme of things
                 }
             }
-            alreadycCounted = false;
         }
         return differentNum;
     }
