@@ -12,28 +12,32 @@ public class Oblig1 {
     }
 
     // Oppgave 1
+    // Finds the largest value in an array by looking two and two places in array,
+    // and switching them if first one is larger. Largest ends up last in the array.
     public static int maks(int[] a) {
         if (a.length < 1) throw new NoSuchElementException("Array is empty");
 
         for (int i = 0; i < a.length-1; i++) {
-           if (a[i] > a[i+1]) switchPlces(a, i, i+1);
+           if (a[i] > a[i+1]) switchPlaces(a, i, i+1);
         }
         return a[a.length-1];
     }
 
-    public static void switchPlces(int[] array, int a, int b) {
+    // Switches place of two values in an int array
+    public static void switchPlaces(int[] array, int a, int b) {
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;
     }
 
+    // Same as maks method, but returns number of switches instead.
     public static int ombyttinger(int[] a) {
         if (a.length < 1) throw new NoSuchElementException("Array is empty");
 
         int numOfSwitches = 0;
         for (int i = 0; i < a.length-1; i++) {
            if (a[i] > a[i+1]) {
-               switchPlces(a, i, i+1);
+               switchPlaces(a, i, i+1);
                numOfSwitches++;
            }
         }
@@ -89,7 +93,7 @@ public class Oblig1 {
         a[0] = last;
     }
 
-     public static <T> void switchPlces(T[] array, int a, int b) {
+     public static <T> void switchPlaces(T[] array, int a, int b) {
         T temp = array[a];
         array[a] = array[b];
         array[b] = temp;
