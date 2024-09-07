@@ -1,6 +1,7 @@
 package no.oslomet.cs.algdat;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
@@ -13,7 +14,18 @@ public class Oblig1 {
 
     // Oppgave 1
     public static int maks(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length < 1) throw new NoSuchElementException("Array is empty");
+
+        for (int i = 0; i < a.length-1; i++) {
+           if (a[i] > a[i+1]) switchPlces(a, i, i+1);
+        }
+        return a[a.length-1];
+    }
+
+    public static void switchPlces(int[] array, int a, int b) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
     }
 
     public static int ombyttinger(int[] a) {
