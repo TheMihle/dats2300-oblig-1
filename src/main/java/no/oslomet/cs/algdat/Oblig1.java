@@ -1,6 +1,5 @@
 package no.oslomet.cs.algdat;
 
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -72,7 +71,7 @@ public class Oblig1 {
     // Oppgave 5
     // Moves all characters of array to the right, and puts the rightmost element first. "Rotating" the array by one.
     public static void rotasjon(char[] a) {
-        if (a.length <= 0) return;
+        if (a.length == 0) return;
 
         char last = a[a.length-1];
         for (int i = a.length-1; i > 0; i--) {
