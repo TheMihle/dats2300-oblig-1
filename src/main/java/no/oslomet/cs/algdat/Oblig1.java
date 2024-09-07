@@ -63,8 +63,9 @@ public class Oblig1 {
 
     // Oppgave 3
     // Finds number of unique numbers without any non-variable data structure and without changing original array.
-    // This code with have complexity of O(n^2) because one extra number means it has to go through the whole array
-    // one more time. Would be faster to sort or use an additional datastructures.
+    // This code with have complexity O(n^2), because one extra number means it has to go through the whole array
+    // one more time. The break saves a little bit.
+    // Would be faster to sort or use an additional datastructures.
     public static int antallUlikeUsortert(int[] a) {
         if (a.length < 1) return a.length;
 
@@ -72,9 +73,12 @@ public class Oblig1 {
         boolean alreadycCounted = false;
 
         for (int i = 0; i < a.length; i++) {
-            for (int j =0; j < a.length; j++) {
+            for (int j = 0; j < a.length; j++) {
                 if (j < i && a[i] == a[j]) alreadycCounted = true;
-                else if (j > i && a[i] == a[j] && !alreadycCounted) differentNum--;
+                else if (j > i && a[i] == a[j] && !alreadycCounted) {
+                    differentNum--;
+                    break;          // Little bit faster, not much in the grand scheme of things
+                }
             }
             alreadycCounted = false;
         }
