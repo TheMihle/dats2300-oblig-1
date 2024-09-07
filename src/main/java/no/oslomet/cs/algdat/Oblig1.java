@@ -28,7 +28,16 @@ public class Oblig1 {
     }
 
     public static int ombyttinger(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length < 1) throw new NoSuchElementException("Array is empty");
+
+        int numOfSwitches = 0;
+        for (int i = 0; i < a.length-1; i++) {
+           if (a[i] > a[i+1]) {
+               switchPlces(a, i, i+1);
+               numOfSwitches++;
+           }
+        }
+        return numOfSwitches;
     }
 
     // Oppgave 2
