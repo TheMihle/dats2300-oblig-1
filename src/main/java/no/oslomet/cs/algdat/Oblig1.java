@@ -21,8 +21,20 @@ public class Oblig1 {
     }
 
     // Oppgave 2
+    // Checks if array is sorted, throws error if it isnt. If it is, returns amount of different values.
     public static int antallUlikeSortert(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length < 1) return 0;
+
+        int antallUlike = 1;
+
+        for (int i = 0; i < a.length-1; i++) {
+            if (a[i] > a[i+1]){
+                throw new IllegalStateException();
+            } else if (a[i] < a[i+1]) {
+                antallUlike++;
+            }
+        }
+        return antallUlike;
     }
 
     // Oppgave 3
