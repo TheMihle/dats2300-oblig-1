@@ -38,8 +38,18 @@ public class Oblig1 {
     }
 
     // Oppgave 3
+    // Fails one of the tree tests
     public static int antallUlikeUsortert(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length < 1) return a.length;
+
+        int differentNum = a.length;
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i+1; j < a.length; j++) {
+                if (a[i] == a[j]) differentNum--;
+            }
+        }
+        return differentNum;
     }
 
     // Oppgave 4
