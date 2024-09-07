@@ -62,16 +62,21 @@ public class Oblig1 {
     }
 
     // Oppgave 3
-    // Fails one of the tree tests
+    // Finds number of unique numbers without any non-variable data structure and without changing original array.
+    // This code with have complexity of O(n^2) because one extra number means it has to go through the whole array
+    // one more time. Would be faster to sort or use an additional datastructures.
     public static int antallUlikeUsortert(int[] a) {
         if (a.length < 1) return a.length;
 
         int differentNum = a.length;
+        boolean alreadycCounted = false;
 
         for (int i = 0; i < a.length; i++) {
-            for (int j = i+1; j < a.length; j++) {
-                if (a[i] == a[j]) differentNum--;
+            for (int j =0; j < a.length; j++) {
+                if (j < i && a[i] == a[j]) alreadycCounted = true;
+                else if (j > i && a[i] == a[j] && !alreadycCounted) differentNum--;
             }
+            alreadycCounted = false;
         }
         return differentNum;
     }
