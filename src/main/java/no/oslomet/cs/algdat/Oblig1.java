@@ -37,16 +37,16 @@ public class Oblig1 {
     public static int antallUlikeSortert(int[] a) {
         if (a.length < 1) return 0;
 
-        int antallUlike = 1;
+        int differentNum = 1;
 
         for (int i = 0; i < a.length-1; i++) {
             if (a[i] > a[i+1]){
-                throw new IllegalStateException();
+                throw new IllegalStateException("Array isn't sorted");
             } else if (a[i] < a[i+1]) {
-                antallUlike++;
+                differentNum++;
             }
         }
-        return antallUlike;
+        return differentNum;
     }
 
     // Oppgave 3
