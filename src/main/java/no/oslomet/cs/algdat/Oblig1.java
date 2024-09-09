@@ -108,7 +108,21 @@ public class Oblig1 {
 
 
     // Oppgave 6
-    public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
+    // Works but isnt fast enought
+    public static void rotasjon(char[] a, int k) {
+        if (a.length < 1) return;
+
+        int numberOfTimes = 0;
+        if (k < 0) {
+            numberOfTimes = a.length + (k % a.length);
+        } else {
+            numberOfTimes = k % a.length;
+        }
+
+        for (int i = 0; i < numberOfTimes; i++) {
+            rotasjon(a);
+        }
+    }
 
     // Oppgave 7
     // Intertwines two strings in to one.
