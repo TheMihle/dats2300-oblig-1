@@ -2,6 +2,7 @@ package no.oslomet.cs.algdat;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class Oblig1 {
 
@@ -89,19 +90,49 @@ public class Oblig1 {
         int right = a.length-1;
 
         while (left < right) {
+            if (a[left] % 2 == 0 && a[right] % 2 != 0) {
+                switchPlaces(a, left, right);
+            }
             if (a[left] % 2 != 0) {
                 left++;
             }
             if (a[right] % 2 == 0) {
                 right--;
             }
-            if (a[left] % 2 != 0 && a[right] % 2 == 0) {
-                switchPlaces(a, left, right);
-            }
+
         }
 
-        System.out.println(Arrays.toString(a));
+        quickSort(a, 0, right);
+        quickSort(a, left, a.length-1);
     }
+
+    public static void quickSort(int[] array, int inLeft, int inRight) {
+        if (inRight - inLeft < 1) return;
+        System.out.println(Arrays.toString(array));
+
+        Random random = new Random();
+        int pivot = random.nextInt( inRight-inLeft + 1) + inLeft;
+        switchPlaces(array, inRight, pivot);
+        System.out.println(Arrays.toString(array));
+        int left = inLeft;
+        int right = inRight-1;
+
+        System.out.println("Pivot is: " + array[inRight]);
+        while (true) {
+            while ( left >= right && array[left] < array[inRight]) left++;
+            while ( left <= right && array[right] >= array[inRight]) right--;
+            if (right < left) break;
+            System.out.println("Right Value: " + array[right] + " Right index: " + right);
+            System.out.println("Left Value: " + array[left] + " Left index: " + left);
+            switchPlaces(array, left, right);
+        }
+        switchPlaces(array, left, inRight);
+
+        quickSort(array, inLeft, right);
+        quickSort(array, left+1, inRight);
+    }
+
+
 
     // Oppgave 5
     // Moves all characters of array to the right, and puts the rightmost element first. "Rotating" the array by one.
