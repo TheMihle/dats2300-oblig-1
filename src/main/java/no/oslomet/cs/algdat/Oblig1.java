@@ -1,5 +1,6 @@
 package no.oslomet.cs.algdat;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -84,7 +85,22 @@ public class Oblig1 {
 
     // Oppgave 4
     public static void delsortering(int[] a) {
-        throw new UnsupportedOperationException();
+        int left = 0;
+        int right = a.length-1;
+
+        while (left < right) {
+            if (a[left] % 2 != 0) {
+                left++;
+            }
+            if (a[right] % 2 == 0) {
+                right--;
+            }
+            if (a[left] % 2 != 0 && a[right] % 2 == 0) {
+                switchPlaces(a, left, right);
+            }
+        }
+
+        System.out.println(Arrays.toString(a));
     }
 
     // Oppgave 5
