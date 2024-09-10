@@ -119,11 +119,9 @@ public class Oblig1 {
 
         System.out.println("Pivot is: " + array[inRight]);
         while (true) {
-            while ( left >= right && array[left] < array[inRight]) left++;
-            while ( left <= right && array[right] >= array[inRight]) right--;
+            while ( left <= right && array[left] < array[inRight]) left++;
+            while ( left <= right && array[right] > array[inRight]) right--;
             if (right < left) break;
-            System.out.println("Right Value: " + array[right] + " Right index: " + right);
-            System.out.println("Left Value: " + array[left] + " Left index: " + left);
             switchPlaces(array, left, right);
         }
         switchPlaces(array, left, inRight);
