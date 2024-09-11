@@ -16,6 +16,22 @@ public class Oblig1 {
     // Oppgave 1
     // Finds the largest value in an array by looking two and two places in array,
     // and switching them if first one is larger. Largest ends up last in the array.
+
+    /*
+     Theory question answers in Norwegian, also in Readme:
+
+    a) Det vil gjøres n-1 sammenligninger da man sammenligner to og to verdier.
+    Den nte gang ville ha sammenlignet den siste med out of bounds.
+
+    b) Det blir færrest ombyttninger når tabellen allerede er stigene, eller sortert. Altså når når alle verdier er større
+    enn den som er forran Altså eks. [1, 2, 3, 4, 4, 5, 6]
+
+    c) Det blir flest ombyttninger når den største verdien er først. Altå at ombyttningen må skje hver eneste sammenligning.
+
+    d) Gjenomsnitt antall ombytt vil være n-Hn (n-ln(n)+0,577). Noe som er dårligere enn tidligere metoder vi har vært
+    borte i. Det er fordi Hn er omtrent like mange ganger tallet er større en det tallet etter seg, som er også tilfellene
+    Da den koden ikke bytter om.
+     */
     public static int maks(int[] a) {
         if (a.length < 1) throw new NoSuchElementException("Array is empty");
 

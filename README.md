@@ -30,7 +30,9 @@ enn den som er forran Altså eks. [1, 2, 3, 4, 4, 5, 6]
 
 c) Det blir flest ombyttninger når den største verdien er først. Altå at ombyttningen må skje hver eneste sammenligning.
 
-d) 
+d) Gjenomsnitt antall ombytt vil være n-Hn (n-ln(n)+0,577). Noe som er dårligere enn tidligere metoder vi har vært 
+borte i. Det er fordi Hn er omtrent like mange ganger tallet er større en det tallet etter seg, som er også tilfellene
+Da den koden ikke bytter om.
 
 ### Oppgave 2
 
