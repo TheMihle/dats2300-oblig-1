@@ -2,7 +2,6 @@ package no.oslomet.cs.algdat;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,7 +27,7 @@ public class Oblig1UnitTest {
         for (int i = 1; i < n; i++) {
             sum2 += (double)1/i;
         }
-        
+
         System.out.println("Average calculated number of steps is n-" + (sum/numberOfLoops) + "\nHarmonic number: " + sum2);
 
     }

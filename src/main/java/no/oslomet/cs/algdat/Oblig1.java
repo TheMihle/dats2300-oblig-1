@@ -122,20 +122,19 @@ public class Oblig1 {
 
         quickSort(a, 0, right);
         quickSort(a, left, a.length-1);
+        System.out.println(Arrays.toString(a));
     }
 
     public static void quickSort(int[] array, int inLeft, int inRight) {
         if (inRight - inLeft < 1) return;
-        System.out.println(Arrays.toString(array));
 
         Random random = new Random();
         int pivot = random.nextInt( inRight-inLeft + 1) + inLeft;
         switchPlaces(array, inRight, pivot);
-        System.out.println(Arrays.toString(array));
+
         int left = inLeft;
         int right = inRight-1;
 
-        System.out.println("Pivot is: " + array[inRight]);
         while (true) {
             while ( left <= right && array[left] < array[inRight]) left++;
             while ( left <= right && array[right] > array[inRight]) right--;
@@ -171,11 +170,11 @@ public class Oblig1 {
 
 
     // Oppgave 6
-    // Works but isnt fast enought
+    // Works but isnt fast enough
     public static void rotasjon(char[] a, int k) {
         if (a.length < 1) return;
 
-        int numberOfTimes = 0;
+        int numberOfTimes;
         if (k < 0) {
             numberOfTimes = a.length + (k % a.length);
         } else {
