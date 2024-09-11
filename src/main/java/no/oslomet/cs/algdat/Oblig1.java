@@ -65,8 +65,9 @@ public class Oblig1 {
 
     // Oppgave 3
     // Finds number of unique numbers without any non-variable data structure and without changing original array.
-    // This code with have complexity O(n^2), because one extra number means it has to go through the whole array
+    // This code with have complexity O(n^2), because one extra number means it has to go through most whole array
     // one more time. The break saves a little bit.
+    // Best case where all numbers are the same, it would be O(n)
     // Would be faster to sort or use an additional datastructures.
     public static int antallUlikeUsortert(int[] a) {
         if (a.length < 1) return a.length;
@@ -85,6 +86,7 @@ public class Oblig1 {
     }
 
     // Oppgave 4
+    // First do a partisjonering to put even and odd numbers on its own sides of the array. Then quicksorts the two parts.
     public static void delsortering(int[] a) {
         int left = 0;
         int right = a.length-1;
@@ -193,6 +195,7 @@ public class Oblig1 {
     }
 
     // Intertwines any number of strings in to one.
+    // Can do the same thing as task 7a can
     public static String flett(String... s) {
         int i = 0;
         boolean letterAdded = true;
