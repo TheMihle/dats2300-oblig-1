@@ -1,6 +1,5 @@
 package no.oslomet.cs.algdat;
 
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
@@ -109,22 +108,17 @@ public class Oblig1 {
 
         while (left < right) {
             if (a[left] % 2 == 0 && a[right] % 2 != 0) {
-                switchPlaces(a, left, right);
+                switchPlaces(a, left++, right--);
             }
-            if (a[left] % 2 != 0) {
-                left++;
-            }
-            if (a[right] % 2 == 0) {
-                right--;
-            }
-
+            while(left <= right && a[left] % 2 != 0) left++;
+            while (left <= right && a[right] % 2 == 0) right--;
         }
 
         quickSort(a, 0, right);
         quickSort(a, left, a.length-1);
-        System.out.println(Arrays.toString(a));
     }
 
+    // Quicksort where pivot is choosen at random
     public static void quickSort(int[] array, int inLeft, int inRight) {
         if (inRight - inLeft < 1) return;
 
@@ -137,17 +131,15 @@ public class Oblig1 {
 
         while (true) {
             while ( left <= right && array[left] < array[inRight]) left++;
-            while ( left <= right && array[right] > array[inRight]) right--;
-            if (right < left) break;
-            switchPlaces(array, left, right);
+            while ( left <= right && array[right] >= array[inRight]) right--;
+            if (right <= left) break;
+            switchPlaces(array, left++, right++);
         }
         switchPlaces(array, left, inRight);
 
-        quickSort(array, inLeft, right);
+        quickSort(array, inLeft, left-1);
         quickSort(array, left+1, inRight);
     }
-
-
 
     // Oppgave 5
     // Moves all characters of array to the right, and puts the rightmost element first. "Rotating" the array by one.
@@ -166,8 +158,6 @@ public class Oblig1 {
         array[a] = array[b];
         array[b] = temp;
     }
-
-
 
     // Oppgave 6
     // Works but isnt fast enough
