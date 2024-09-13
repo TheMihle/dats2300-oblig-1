@@ -13,15 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Full Test Run
-      id: full-test-run
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Full Test Run
-        setup-command: ''
-        command: gradle test
-        timeout: 10
-        max-score: 10
     - name: Oppgave 1
       id: oppgave-1
       uses: classroom-resources/autograding-command-grader@v1
@@ -115,7 +106,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        FULL-TEST-RUN_RESULTS: "${{steps.full-test-run.outputs.result}}"
         OPPGAVE-1_RESULTS: "${{steps.oppgave-1.outputs.result}}"
         OPPGAVE-2_RESULTS: "${{steps.oppgave-2.outputs.result}}"
         OPPGAVE-3_RESULTS: "${{steps.oppgave-3.outputs.result}}"
@@ -127,4 +117,4 @@ jobs:
         OPPGAVE-9_RESULTS: "${{steps.oppgave-9.outputs.result}}"
         OPPGAVE-10_RESULTS: "${{steps.oppgave-10.outputs.result}}"
       with:
-        runners: full-test-run,oppgave-1,oppgave-2,oppgave-3,oppgave-4,oppgave-5,oppgave-6,oppgave-7,oppgave-8,oppgave-9,oppgave-10
+        runners: oppgave-1,oppgave-2,oppgave-3,oppgave-4,oppgave-5,oppgave-6,oppgave-7,oppgave-8,oppgave-9,oppgave-10
