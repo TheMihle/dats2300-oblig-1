@@ -1,5 +1,6 @@
 package no.oslomet.cs.algdat;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
@@ -160,20 +161,36 @@ public class Oblig1 {
     }
 
     // Oppgave 6
-    // Works but isnt fast enough
+    // Flips whole array, then flips two parts depending on what k is.
     public static void rotasjon(char[] a, int k) {
-        if (a.length < 1) return;
+        if (a.length <= 1) return;
+        k = k % a.length;
+        if (k < 0) k = k + a.length;
+        flip(a);
 
-        int numberOfTimes;
-        if (k < 0) {
-            numberOfTimes = a.length + (k % a.length);
-        } else {
-            numberOfTimes = k % a.length;
-        }
+        flip(a, 0, k-1);
+        flip(a, k, a.length-1 );
+    }
 
-        for (int i = 0; i < numberOfTimes; i++) {
-            rotasjon(a);
+//    Flips part of array based on index values given
+    public static void flip(char[] array, int start, int end) {
+        int i = start;
+        int j = end;
+        while (i < j) {
+            switchPlaces(array, i++, j--);
         }
+    }
+
+//    Flips with whole array
+    public static void flip(char[] array) {
+        flip(array, 0, array.length-1);
+    }
+
+//    Switches place of two values in a char array
+    public static void switchPlaces(char[] array, int a, int b) {
+        char temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
     }
 
     // Oppgave 7
