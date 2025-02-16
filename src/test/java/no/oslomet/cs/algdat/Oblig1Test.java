@@ -221,7 +221,7 @@ class Oppgave5Tests {
 class Oppgave6Tests {
     @Test
     void rotasjonTom() {
-        if (Oblig1.gruppeMedlemmer() == 1) return;
+//        if (Oblig1.gruppeMedlemmer() == 1) return;
 
         char[] tom = {};
         assertTimeout(Duration.ofMillis(10), () -> Oblig1.rotasjon(tom, 1), "Metoden ser ut til å gå evig på tom tabell.");
@@ -231,7 +231,7 @@ class Oppgave6Tests {
 
     @Test
     void rotasjonEttElement() {
-        if (Oblig1.gruppeMedlemmer() == 1) return;
+//        if (Oblig1.gruppeMedlemmer() == 1) return;
 
         char[] ettElement = {'A'};
         char[] svar = {'A'};
@@ -243,7 +243,7 @@ class Oppgave6Tests {
 
     @Test
     void rotasjonToElement() {
-        if (Oblig1.gruppeMedlemmer() == 1) return;
+//        if (Oblig1.gruppeMedlemmer() == 1) return;
 
         char[] a = {'A', 'B'};
         char[] svar = {'B', 'A'};
@@ -256,7 +256,7 @@ class Oppgave6Tests {
 
     @Test
     void rotasjonFlereElement() {
-        if (Oblig1.gruppeMedlemmer() == 1) return;
+//        if (Oblig1.gruppeMedlemmer() == 1) return;
 
         char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         char[] svar = {'G', 'H', 'I', 'J', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -275,7 +275,7 @@ class Oppgave6Tests {
 
     @Test
     void rotasjonTid() {
-        if (Oblig1.gruppeMedlemmer() == 1) return;
+//        if (Oblig1.gruppeMedlemmer() == 1) return;
 
         char[] x = new char[100_000];
 
